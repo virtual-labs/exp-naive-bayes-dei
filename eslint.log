@@ -1,0 +1,10 @@
+
+/home/runner/work/exp-naive-bayes-dei/exp-naive-bayes-dei/experiment/simulation/js/main.js
+  225:37  warning  Unnecessary escape character: \S  no-useless-escape
+  225:44  warning  Unnecessary escape character: \.  no-useless-escape
+  225:46  warning  Unnecessary escape character: \S  no-useless-escape
+  225:82  warning  Unnecessary escape character: \s  no-useless-escape
+  226:18  warning  Unnecessary escape character: \s  no-useless-escape
+
+✖ 5 problems (0 errors, 5 warnings)
+
