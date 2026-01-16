@@ -8,7 +8,8 @@
 ### Developers
 | SNo. | Name | Email | Institute | ID |
 | :---: | :---: | :---: | :---: | :---: |
-| 1 | Rohit | 3337.rohit64@gmail.com | Dayalbagh Educational Institute | 1 |
-| 2 | Anshika Singh | singhanshikaa03@gmail.com | Dayalbagh Educational Institute | 2 |
+| 1 | Anshika Singh | singhanshikaa03@gmail.com | Dayalbagh Educational Institute | 1 |
+| 2 | Rohit | 3337.rohit64@gmail.com | Dayalbagh Educational Institute | 2 |
 | 3 | Deeksha Saraswat | deekshasaraswat01@gmail.com | Dayalbagh Educational Institute | 3 |
 | 4 | Amoli Satsangi | amolisatsangi6@gmail.com | Dayalbagh Educational Institute | 4 |
+| 5 | Sumir Singh | sumirsingh19@gmail.com | Dayalbagh Educational Institute | 5 |

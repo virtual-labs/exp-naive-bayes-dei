@@ -108,38 +108,38 @@ data.tail()`,
   </thead>
   <tbody>
     <tr>
-      <td style="text-align: left;">0</td>
+      <td style="text-align: left;">1737</td>
       <td style="text-align: left;">spam</td>
       <td style="text-align: left;">
-        Get your garden ready for summer with a free selection of summer bulbs and seeds worth £33.50, available only with The Scotsman this Saturday. To stop messages, visit notxt.co.uk.
+        Do you want 750 anytime any network mins 150 text and a NEW VIDEO phone for only five pounds per week call 08002888812 or reply for delivery tomorrow
       </td>
     </tr>
     <tr>
-      <td style="text-align: left;">1</td>
-      <td style="text-align: left;">spam</td>
-      <td style="text-align: left;">
-        This is your chance to be on a reality fantasy show. Call now at 08707509020. The cost is 20p per minute. NTT Ltd, PO Box 1327, Croydon CR9 5WB. 0870 is a national-rate call.
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align: left;">2</td>
+      <td style="text-align: left;">1738</td>
       <td style="text-align: left;">ham</td>
       <td style="text-align: left;">
-        Love is not a decision; it is a feeling. If we could choose whom to love, life would be much simpler, but it would also be less magical.
+        Thanx...
       </td>
     </tr>
     <tr>
-      <td style="text-align: left;">3</td>
-      <td style="text-align: left;">ham</td>
-      <td style="text-align: left;">
-        Good friends care for each other, close friends understand each other, and true friends remain forever beyond words and beyond time. Good night.
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align: left;">4</td>
+      <td style="text-align: left;">1739</td>
       <td style="text-align: left;">spam</td>
       <td style="text-align: left;">
-        Get your garden ready for summer with a free selection of summer bulbs and seeds worth £33.50, available only with The Scotsman this Saturday. To stop messages, visit notxt.co.uk.
+        88800 and 89034 are premium phone services call 08718711108
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align: left;">1740</td>
+      <td style="text-align: left;">spam</td>
+      <td style="text-align: left;">
+        Today's Offer! Claim ur £150 worth of discount vouchers! Text YES to 85023 now! SavaMob, member offers mobile! T Cs 08717898035. £3.00 Sub. 16 . Unsub reply X
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align: left;">1741</td>
+      <td style="text-align: left;">ham</td>
+      <td style="text-align: left;">
+        am up to my eyes in philosophy
       </td>
     </tr>
   </tbody>
@@ -254,10 +254,10 @@ print("Text data vectorized using TF-IDF.")`,
 model=MultinomialNB()
 model.fit(X_train_vec,y_train)
 print("Model training completed.")`,
-                output: `<div class="output-text">Model training completed.</div>
-<div style="margin-top: 15px;">
-    <img src="images/naive .png" alt="MultinomialNB Estimator" style="width: 190px; height: auto; display: block; border: 1px solid #ced4da; border-radius: 4px;">
-</div>`
+                output: `<img src="images/naive .png" alt="MultinomialNB Estimator" style="width: 190px; height: auto; display: block; border: 1px solid #ced4da; border-radius: 4px;">
+</div>
+<div class="output-text">Model training completed.</div>
+<div style="margin-top: 15px;">`
             }
         ]
     },
@@ -393,28 +393,49 @@ window.selectEvalSample = function (row, index) {
 
     // Sample data for visualization
     const samples = [
-        { cat: 'ham', msg: "It's getting me down just waiting around.", prob: 0.0231 },
+        { cat: 'ham', msg: "It's getting me down just waiting around.", prob: 0.0408 },
         { cat: 'spam', msg: "Text and meet someone today. Reply with your name and age.", prob: 0.5772 },
-        { cat: 'ham', msg: "I.ll give her once i have it. Plus she said grinule greet you whenever we speak", prob: 0.0412 },
-        { cat: 'spam', msg: "Congratulations U can claim 2 VIP row A Tickets 2 C Blu in concert in November or Blu gift guaranteed Call 09061104276 to claim TS&Cs www.smsco.net cost£3.75max", prob: 0.9892 },
-        { cat: 'ham', msg: "thinking about you.", prob: 0.0154 }
+        { cat: 'ham', msg: "I.ll give her once i have it. Plus she said grinule greet you whenever we speak", prob: 0.0322 },
+        { cat: 'spam', msg: "Congratulations U can claim 2 VIP row A Tickets 2 C Blu in concert in November or Blu gift guaranteed Call 09061104276 to claim TS&Cs www.smsco.net cost£3.75max", prob: 0.9309 },
+        { cat: 'ham', msg: "thinking about you.", prob: 0.0670 }
     ];
 
     const sample = samples[index];
 
+    // Word influence mapping (simulated based on images)
+    const wordInfluences = {
+        // Spammy (Red)
+        'text': 'spam_strong', 'reply': 'spam_strong', 'claim': 'spam_strong', 'call': 'spam_strong',
+        'congratulations': 'spam_med', 'gift': 'spam_med', 'guaranteed': 'spam_med', 'cost': 'spam_med',
+        'waiting': 'spam_weak', 'your': 'spam_weak', 'plus': 'spam_weak',
+
+        // Hammy (Green)
+        'getting': 'ham_strong', 'me': 'ham_strong', 'down': 'ham_strong', 'just': 'ham_strong',
+        'meet': 'ham_strong', 'someone': 'ham_strong', 'name': 'ham_strong', 'age': 'ham_strong',
+        'give': 'ham_strong', 'her': 'ham_strong', 'once': 'ham_strong', 'have': 'ham_strong',
+        'she': 'ham_strong', 'said': 'ham_strong', 'greet': 'ham_strong', 'you': 'ham_strong',
+        'whenever': 'ham_strong', 'we': 'ham_strong', 'speak': 'ham_strong',
+        'thinking': 'ham_strong', 'about': 'ham_strong', 'and': 'ham_strong',
+        'in': 'ham_med', 'can': 'ham_med'
+    };
+
     // Simulate color_text highlighting
     const words = sample.msg.split(' ');
     analysisText.innerHTML = words.map(w => {
-        const hash = w.length % 5;
-        let color = 'rgba(0,0,0,0.05)';
-        if (sample.cat === 'spam') {
-            if (hash === 0) color = 'rgb(255, 100, 100)'; // Strong spam signal
-            else if (hash === 2) color = 'rgb(255, 200, 200)'; // Weak spam
-            else color = 'rgb(200, 255, 200)'; // Ham signal
-        } else {
-            if (hash === 1) color = 'rgb(100, 255, 100)'; // Strong ham
-            else color = 'rgb(230, 255, 230)';
-        }
+        const cleanW = w.toLowerCase().replace(/[^a-z0-9]/g, '');
+        const influence = wordInfluences[cleanW];
+
+        let color = 'rgba(0,0,0,0.05)'; // Default neutral
+
+        if (influence === 'spam_strong') color = 'rgb(255, 0, 0)';      // Red
+        else if (influence === 'spam_med') color = 'rgb(255, 150, 150)'; // Light Red/Pink
+        else if (influence === 'spam_weak') color = 'rgb(255, 220, 220)'; // Very Light Red
+        else if (influence === 'ham_strong') color = 'rgb(0, 255, 0)';   // Green
+        else if (influence === 'ham_med') color = 'rgb(150, 255, 150)';  // Light Green
+
+        // Override for image 0 specifically ("just" looks green, "waiting" looks red)
+        if (cleanW === 'waiting') color = 'rgb(255, 220, 220)';
+
         return `<span style="background-color:${color}; padding:3px 6px; margin:2px; border-radius:4px; display: inline-block;">${w}</span>`;
     }).join(' ');
 
@@ -642,7 +663,7 @@ window.showPredictionResult = function (s) {
 function showCompletionMessage() {
     outputDisplay.innerHTML = `<div style="text-align: center; animation: fadeIn 1s ease;">
       <h1 style="color: #2a9d8f; font-size: 2.5rem; margin-bottom: 20px;">Experiment Completed! ✔️</h1>
-      <p style="font-size: 1.5rem; color: #333;">You have completed naive bayes spam detection successfully!</p>
+      <p style="font-size: 1.5rem; color: #333;">You have completed naive bayes classification successfully!</p>
       <button onclick="location.reload()" style="margin-top: 30px; padding: 15px 30px; background-color: #f7a072; color: white; border: none; border-radius: 10px; font-size: 1.2rem; cursor: pointer; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">Restart Experiment</button>
     </div>`;
     runBtn.style.display = 'none';
