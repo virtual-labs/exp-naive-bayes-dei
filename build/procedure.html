@@ -6,7 +6,7 @@
         'discipline': 'Test',
         'college': 'DLBG',
         'phase': 'Testing',
-        'expName': 'NAIVE BAYES',
+        'expName': 'NAIVE BAYES CLASSIFICATION',
         'expShortName': 'naive-bayes'
         }];
     
@@ -25,7 +25,7 @@
     
     	<meta name="experiment-short-name" content="naive-bayes">
     	<meta name="developer-institute" content="DLBG">
-    	<meta name="learning-unit" content="NAIVE BAYES">
+    	<meta name="learning-unit" content="NAIVE BAYES CLASSIFICATION">
     	<meta name="task-name" content="Procedure">
     
     <!-- For iPhone -->
@@ -94,7 +94,7 @@
             </div>      <div class="svc-rating-submit">
                 <rating-submit title="Rate" this="" experiment="">
                 </rating-submit>
-            </div>      <bug-report id="bug-report" title="[BUG REPORT] NAIVE BAYES" page-type="text" context-info="{&quot;organisation&quot;:&quot;Virtual Labs&quot;,&quot;developer_institute&quot;:&quot;DLBG&quot;,&quot;expname&quot;:&quot;NAIVE BAYES&quot;,&quot;labname&quot;:&quot;Virtual Lab&quot;,&quot;phase&quot;:&quot;Testing&quot;}" checkbox-json="{&quot;text&quot;:[&quot;Insufficient Content&quot;],&quot;video&quot;:[&quot;Insufficient Content&quot;],&quot;assesment&quot;:[&quot;Incorrect Options&quot;,&quot;Incorrect Answer&quot;,&quot;Incorrect Question&quot;],&quot;assessment&quot;:[&quot;Incorrect Options&quot;,&quot;Incorrect Answer&quot;,&quot;Incorrect Question&quot;],&quot;simulation&quot;:[&quot;Simulation Not Working&quot;,&quot;Incorrect Results/Observations&quot;,&quot;Insufficient/Incorrect Instructions&quot;],&quot;DEFAULT&quot;:[&quot;Page Not Loading&quot;,&quot;Content Not Visible&quot;,&quot;Incorrect Content&quot;]}" button_style="border: none; color: #fff; background-color: #288ec8; text-align: center; font-size: 1.05rem; border-radius: 1em;padding: 0.6em 1.2em; margin: 0 10px" position="override" custom_button_class="v-button"></bug-report>
+            </div>      <bug-report id="bug-report" title="[BUG REPORT] NAIVE BAYES CLASSIFICATION" page-type="text" context-info="{&quot;organisation&quot;:&quot;Virtual Labs&quot;,&quot;developer_institute&quot;:&quot;DLBG&quot;,&quot;expname&quot;:&quot;NAIVE BAYES CLASSIFICATION&quot;,&quot;labname&quot;:&quot;Virtual Lab&quot;,&quot;phase&quot;:&quot;Testing&quot;}" checkbox-json="{&quot;text&quot;:[&quot;Insufficient Content&quot;],&quot;video&quot;:[&quot;Insufficient Content&quot;],&quot;assesment&quot;:[&quot;Incorrect Options&quot;,&quot;Incorrect Answer&quot;,&quot;Incorrect Question&quot;],&quot;assessment&quot;:[&quot;Incorrect Options&quot;,&quot;Incorrect Answer&quot;,&quot;Incorrect Question&quot;],&quot;simulation&quot;:[&quot;Simulation Not Working&quot;,&quot;Incorrect Results/Observations&quot;,&quot;Insufficient/Incorrect Instructions&quot;],&quot;DEFAULT&quot;:[&quot;Page Not Loading&quot;,&quot;Content Not Visible&quot;,&quot;Incorrect Content&quot;]}" button_style="border: none; color: #fff; background-color: #288ec8; text-align: center; font-size: 1.05rem; border-radius: 1em;padding: 0.6em 1.2em; margin: 0 10px" position="override" custom_button_class="v-button"></bug-report>
           </div>
         </nav>
       </header>
@@ -351,29 +351,27 @@
                 </div>
           </div>            <div class="vlabs-page-content px-5 pb-4 flex-grow-1 markdown-body">
               <div class="text-center fix-spacing">
-                <h2 id="naive-bayes">Naive Bayes</h2>
+                <h2 id="naive-bayes-classification">Naive Bayes Classification</h2>
           
               </div>
               <p>The objective of this experiment is to classify the text messages into two categories—Spam and Ham. The input to the model consists of multiple independent random text messages, while the output is a binary dependent variable indicating the category of that message.</p>
-          <ol>
-          <li> <strong>Import Libraries</strong>: Initialize the environment by importing the required libraries: <code>pandas</code>, <code>numpy</code>, <code>re</code>, <code>matplotlib</code>, <code>nltk</code>, and the necessary modules from <code>scikit-learn</code>.</li>
-          <li> <strong>Load Dataset</strong>: Load the <code>Spam_Detection.csv</code> file into a DataFrame using <code>pd.read_csv()</code>. The dataset contains 1742 text messages, where each row represents an individual message and its corresponding category (Spam or Ham).</li>
-          <li> <strong>Exploratory Data Analysis</strong>: Conduct initial data exploration using <code>head()</code>, <code>tail()</code>, <code>info()</code>, <code>shape</code>, and <code>value_counts()</code> to understand the dataset structure and class distribution.</li>
-          <li> <strong>Check Missing Values</strong>: Inspect the dataset for any missing entries using <code>isnull().sum()</code> to ensure data quality before processing.</li>
-          <li> <strong>Visualize Class Distribution</strong>: Create visual representations, such as pie charts, to illustrate the balance between Spam and Ham messages in the dataset.</li>
-          <li> <strong>Initialize Preprocessing Tools</strong>: Set up essential Natural Language Processing (NLP) tools, including the <code>PorterStemmer</code> and the standard English stop-word list.</li>
-          <li> <strong>Text Preprocessing</strong>: Clean the text data by implementing functions to convert text to lowercase, remove URLs, strip special characters and numbers, and eliminate redundant white spaces.</li>
-          <li> <strong>Target Encoding</strong>: Transform the categorical labels into numerical format, where <strong>Ham</strong> is encoded as <strong>0</strong> and <strong>Spam</strong> is encoded as <strong>1</strong>.</li>
-          <li> <strong>Data Partitioning</strong>: Split the preprocessed dataset into training (80%) and testing (20%) sets to facilitate model building and evaluation.</li>
-          <li><strong>TF-IDF Vectorization</strong>: Convert the textual messages into numerical features using the Term Frequency-Inverse Document Frequency (TF-IDF) vectorization technique.</li>
-          <li><strong>Model Training</strong>: Initialize and train a <strong>Multinomial Naive Bayes</strong> model using the vectorized training data.</li>
-          <li><strong>Performance Evaluation</strong>: Assess the model's effectiveness using metrics such as Accuracy Score, Precision, Recall, and F1-score, supplemented by a Confusion Matrix and Precision-Recall curve visualizations.</li>
-          <li><strong>Prediction Analysis</strong>: Evaluate the model's real-world applicability by analyzing predictions on random test samples, displaying the actual label, predicted label, and the calculated spam probability for each sample.</li>
-          </ol>
+          <p><strong>Step 1</strong>: <strong>Import Libraries</strong>: Initialize the environment by importing the required libraries: <code>pandas</code>, <code>numpy</code>, <code>re</code>, <code>matplotlib</code>, <code>nltk</code>, and the necessary modules from <code>scikit-learn</code>.</p>
+          <p><strong>Step 2</strong>: <strong>Load Dataset</strong>: Load the <code>Spam_Detection.csv</code> file into a DataFrame using <code>pd.read_csv()</code>. The dataset contains 1742 text messages, where each row represents an individual message and its corresponding category (Spam or Ham).</p>
+          <p><strong>Step 3</strong>: <strong>Exploratory Data Analysis</strong>: Conduct initial data exploration using <code>head()</code>, <code>tail()</code>, <code>info()</code>, <code>shape</code>, and <code>value_counts()</code> to understand the dataset structure and class distribution.</p>
+          <p><strong>Step 4</strong>: <strong>Check Missing Values</strong>: Inspect the dataset for any missing entries using <code>isnull().sum()</code> to ensure data quality before processing.</p>
+          <p><strong>Step 5</strong>: <strong>Visualize Class Distribution</strong>: Create visual representations, such as pie charts, to illustrate the balance between Spam and Ham messages in the dataset.</p>
+          <p><strong>Step 6</strong>: <strong>Initialize Preprocessing Tools</strong>: Set up essential Natural Language Processing (NLP) tools, including the <code>PorterStemmer</code> and the standard English stop-word list.</p>
+          <p><strong>Step 7</strong>: <strong>Text Preprocessing</strong>: Clean the text data by implementing functions to convert text to lowercase, remove URLs, strip special characters and numbers, and eliminate redundant white spaces.</p>
+          <p><strong>Step 8</strong>: <strong>Target Encoding</strong>: Transform the categorical labels into numerical format, where <strong>Ham</strong> is encoded as <strong>0</strong> and <strong>Spam</strong> is encoded as <strong>1</strong>.</p>
+          <p><strong>Step 9</strong>: <strong>Data Partitioning</strong>: Split the preprocessed dataset into training (80%) and testing (20%) sets to facilitate model building and evaluation.</p>
+          <p><strong>Step 10</strong>: <strong>TF-IDF Vectorization</strong>: Convert the textual messages into numerical features using the Term Frequency-Inverse Document Frequency (TF-IDF) vectorization technique.</p>
+          <p><strong>Step 11</strong>: <strong>Model Training</strong>: Initialize and train a <strong>Multinomial Naive Bayes</strong> model using the vectorized training data.</p>
+          <p><strong>Step 12</strong>: <strong>Performance Evaluation</strong>: Assess the model's effectiveness using metrics such as Accuracy Score, Precision, Recall, and F1-score, supplemented by a Confusion Matrix and Precision-Recall curve visualizations.</p>
+          <p><strong>Step 13</strong>: <strong>Prediction Analysis</strong>: Evaluate the model's real-world applicability by analyzing predictions on random test samples, displaying the actual label, predicted label, and the calculated spam probability for each sample.</p>
           
             </div>
           <div class="bug-report-mobile">
-              <bug-report id="bug-report" title="[BUG REPORT] NAIVE BAYES" page-type="text" context-info="{&quot;organisation&quot;:&quot;Virtual Labs&quot;,&quot;developer_institute&quot;:&quot;DLBG&quot;,&quot;expname&quot;:&quot;NAIVE BAYES&quot;,&quot;labname&quot;:&quot;Virtual Lab&quot;,&quot;phase&quot;:&quot;Testing&quot;}" checkbox-json="{&quot;text&quot;:[&quot;Insufficient Content&quot;],&quot;video&quot;:[&quot;Insufficient Content&quot;],&quot;assesment&quot;:[&quot;Incorrect Options&quot;,&quot;Incorrect Answer&quot;,&quot;Incorrect Question&quot;],&quot;assessment&quot;:[&quot;Incorrect Options&quot;,&quot;Incorrect Answer&quot;,&quot;Incorrect Question&quot;],&quot;simulation&quot;:[&quot;Simulation Not Working&quot;,&quot;Incorrect Results/Observations&quot;,&quot;Insufficient/Incorrect Instructions&quot;],&quot;DEFAULT&quot;:[&quot;Page Not Loading&quot;,&quot;Content Not Visible&quot;,&quot;Incorrect Content&quot;]}" position="override" button_style="
+              <bug-report id="bug-report" title="[BUG REPORT] NAIVE BAYES CLASSIFICATION" page-type="text" context-info="{&quot;organisation&quot;:&quot;Virtual Labs&quot;,&quot;developer_institute&quot;:&quot;DLBG&quot;,&quot;expname&quot;:&quot;NAIVE BAYES CLASSIFICATION&quot;,&quot;labname&quot;:&quot;Virtual Lab&quot;,&quot;phase&quot;:&quot;Testing&quot;}" checkbox-json="{&quot;text&quot;:[&quot;Insufficient Content&quot;],&quot;video&quot;:[&quot;Insufficient Content&quot;],&quot;assesment&quot;:[&quot;Incorrect Options&quot;,&quot;Incorrect Answer&quot;,&quot;Incorrect Question&quot;],&quot;assessment&quot;:[&quot;Incorrect Options&quot;,&quot;Incorrect Answer&quot;,&quot;Incorrect Question&quot;],&quot;simulation&quot;:[&quot;Simulation Not Working&quot;,&quot;Incorrect Results/Observations&quot;,&quot;Insufficient/Incorrect Instructions&quot;],&quot;DEFAULT&quot;:[&quot;Page Not Loading&quot;,&quot;Content Not Visible&quot;,&quot;Incorrect Content&quot;]}" position="override" button_style="
                           position: fixed; 
                           bottom: 20px;
                           right: 20px;
