@@ -496,7 +496,6 @@ function renderSidebar() {
 
     const downloadBtn = document.createElement('button');
     downloadBtn.className = 'step-btn';
-    downloadBtn.style.cssText = "background:#F57C2A !important; color:white; margin-top:10px; text-align:center; display: flex; align-items: center; justify-content: center; gap: 10px;";
     downloadBtn.innerHTML = `
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
@@ -504,8 +503,24 @@ function renderSidebar() {
             <line x1="12" y1="15" x2="12" y2="3"></line>
         </svg>
         Download Experiment`;
-    downloadBtn.onclick = downloadPDF;
+    
+    // Check if all steps are completed
+    const allCompleted = checkAllStepsCompleted();
+    if (allCompleted) {
+        downloadBtn.style.cssText = "background:#F57C2A !important; color:white; margin-top:10px; text-align:center; display: flex; align-items: center; justify-content: center; gap: 10px; opacity:1; cursor:pointer;";
+        downloadBtn.disabled = false;
+        downloadBtn.onclick = downloadPDF;
+    } else {
+        downloadBtn.style.cssText = "background:#ccc !important; color:#666; margin-top:10px; text-align:center; display: flex; align-items: center; justify-content: center; gap: 10px; opacity:0.7; cursor:not-allowed;";
+        downloadBtn.disabled = true;
+        downloadBtn.title = "Complete all steps to download the report";
+    }
     stepsContainer.appendChild(downloadBtn);
+}
+
+// Function to check if all steps are completed
+function checkAllStepsCompleted() {
+    return STATE.stepsStatus.every(status => status.completed);
 }
 
 function loadStep(index) {
