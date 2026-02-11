@@ -449,6 +449,8 @@ window.selectEvalSample = function (row, index) {
 };
 
 // State Management
+let hasCompletedOnce = sessionStorage.getItem('nb_completed') === 'true';
+
 let STATE = {
     stepIndex: 0,
     subStepIndex: 0,
@@ -504,8 +506,8 @@ function renderSidebar() {
         </svg>
         Download Experiment`;
     
-    // Check if all steps are completed
-    const allCompleted = checkAllStepsCompleted();
+    // Check if all steps are completed (or were completed before a restart)
+    const allCompleted = checkAllStepsCompleted() || hasCompletedOnce;
     if (allCompleted) {
       downloadBtn.style.cssText = "background:#F57C2A !important; color:white; margin-top:10px; text-align:center; display: flex; align-items: center; justify-content: center; gap: 10px; opacity:1; cursor:pointer;";
       downloadBtn.disabled = false;
@@ -679,6 +681,8 @@ window.showPredictionResult = function (s) {
 };
 
 function showCompletionMessage() {
+    hasCompletedOnce = true;
+    sessionStorage.setItem('nb_completed', 'true');
     outputDisplay.innerHTML = `<style>
       @keyframes clap {
         0%, 100% { transform: rotate(-15deg) scale(1); }

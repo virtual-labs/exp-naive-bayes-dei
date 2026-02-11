@@ -48,3 +48,27 @@ For classification, the **Multinomial Naive Bayes** algorithm is employed, as it
 - Limited in modeling complex, non-linear patterns compared to more sophisticated algorithms.
 
 Overall, the Naive Bayes classifier, combined with NLP-based feature normalization and TF-IDF representation, provides an efficient and robust solution for spam and ham message classification.
+
+### 6. Algorithm
+
+1. **Step 1:** Apply **Bayes' Theorem**:
+    - `P(Class|Features) = P(Features|Class) × P(Class) / P(Features)`
+2. **Step 2:** Apply **Naive Independence Assumption**:
+    - `P(x₁,x₂,...,xₙ|Class) = P(x₁|Class) × P(x₂|Class) × ... × P(xₙ|Class)`
+3. **Step 3:** During Training, calculate from data:
+    - **Prior Probability:**
+        - `P(Class=c) = (Count of samples in class c) / (Total samples)`
+    - **Conditional Probability (for each feature):**
+        - **For categorical features:**
+            - `P(xⱼ=v|Class=c) = (Count of class c samples where feature j = v) / (Count of class c samples)`
+        - **For continuous features (Gaussian Naive Bayes):**
+            - Calculate mean (μ) and variance (σ²) of feature j for each class
+            - `P(xⱼ|Class=c) = (1/√(2πσ²)) × exp(-(xⱼ-μ)²/(2σ²))`
+4. **Step 4:** Add **Laplace Smoothing** (to handle zero probabilities):
+    - `P(xⱼ=v|Class=c) = (Count + 1) / (Total + Number of unique values)`
+5. **Step 5:** For **Prediction**:
+    - For each class c:
+        - Calculate: `Score(c) = P(Class=c) × ∏P(xⱼ|Class=c)`
+    - Use log to avoid underflow:
+        - `Log_Score(c) = log(P(Class=c)) + Σlog(P(xⱼ|Class=c))`
+    - Predict class with **HIGHEST** score
