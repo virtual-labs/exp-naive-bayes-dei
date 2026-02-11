@@ -507,13 +507,16 @@ function renderSidebar() {
     // Check if all steps are completed
     const allCompleted = checkAllStepsCompleted();
     if (allCompleted) {
-        downloadBtn.style.cssText = "background:#F57C2A !important; color:white; margin-top:10px; text-align:center; display: flex; align-items: center; justify-content: center; gap: 10px; opacity:1; cursor:pointer;";
-        downloadBtn.disabled = false;
-        downloadBtn.onclick = downloadPDF;
+      downloadBtn.style.cssText = "background:#F57C2A !important; color:white; margin-top:10px; text-align:center; display: flex; align-items: center; justify-content: center; gap: 10px; opacity:1; cursor:pointer;";
+      downloadBtn.disabled = false;
+      downloadBtn.onclick = downloadPDF;
     } else {
-        downloadBtn.style.cssText = "background:#ccc !important; color:#666; margin-top:10px; text-align:center; display: flex; align-items: center; justify-content: center; gap: 10px; opacity:0.7; cursor:not-allowed;";
-        downloadBtn.disabled = true;
-        downloadBtn.title = "Complete all steps to download the report";
+      downloadBtn.style.cssText = "background:#f5f5f5 !important; color:#9e9e9e; margin-top:10px; text-align:center; display: flex; align-items: center; justify-content: center; gap: 10px; opacity:1; cursor:default; border:1px solid #e0e0e0;";
+      downloadBtn.disabled = false;
+      downloadBtn.title = "Need to run the Experiment to download the pdf.";
+      downloadBtn.onclick = function () {
+        alert("Need to run the Experiment to download the pdf.");
+      };
     }
     stepsContainer.appendChild(downloadBtn);
 }
@@ -676,9 +679,26 @@ window.showPredictionResult = function (s) {
 };
 
 function showCompletionMessage() {
-    outputDisplay.innerHTML = `<div style="text-align: center; animation: fadeIn 1s ease;">
-      <h1 style="color: #2a9d8f; font-size: 2.5rem; margin-bottom: 20px;">Experiment Completed! ✔️</h1>
-      <p style="font-size: 1.5rem; color: #333;">You have completed naive bayes classification successfully!</p>
+    outputDisplay.innerHTML = `<style>
+      @keyframes clap {
+        0%, 100% { transform: rotate(-15deg) scale(1); }
+        50% { transform: rotate(15deg) scale(1.1); }
+      }
+      .clapping-hands {
+        display: inline-block;
+        font-size: 2.5rem;
+        animation: clap 0.5s ease-in-out infinite;
+        margin: 0 5px;
+      }
+    </style>
+    <div style="text-align: center; animation: fadeIn 1s ease;">
+      <div style="margin-bottom: 20px;">
+        <span class="clapping-hands">👏</span>
+        <span class="clapping-hands" style="animation-delay: 0.15s;">👏</span>
+        <span class="clapping-hands" style="animation-delay: 0.3s;">👏</span>
+      </div>
+      <h1 style="color: #2a9d8f; font-size: 2.5rem; margin-bottom: 20px;">Congratulations!</h1>
+      <p style="font-size: 1.2rem; color: #333; max-width: 600px; margin: 0 auto;">You have successfully completed the Naïve Bayes experiment. You now understand how Naïve Bayes predicts class labels using probability.</p>
       <button onclick="location.reload()" style="margin-top: 30px; padding: 15px 30px; background-color: #f7a072; color: white; border: none; border-radius: 10px; font-size: 1.2rem; cursor: pointer; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">Restart Experiment</button>
     </div>`;
     runBtn.style.display = 'none';
