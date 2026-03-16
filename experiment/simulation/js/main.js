@@ -714,8 +714,8 @@ function restartExperiment() {
 
 function downloadPDF() {
     const link = document.createElement('a');
-    link.href = './Exp-Naive-Bayes.pdf';
-    link.download = 'Exp-Naive-Bayes.pdf';
+    link.href = './Experiment-5.pdf';
+    link.download = 'Experiment-5.pdf';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
