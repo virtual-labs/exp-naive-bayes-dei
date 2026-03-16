@@ -1,0 +1,110 @@
+:root {
+    --primary-color: #1a1a1a;
+    --text-color: #333;
+    --subtext-color: #666;
+    --bg-color: #f8f9fa;
+    --card-bg: #ffffff;
+    --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    --card-hover-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Outfit', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.landing-container {
+    text-align: center;
+    max-width: 1000px;
+    width: 90%;
+    padding: 40px 0;
+}
+
+.header {
+    margin-bottom: 60px;
+}
+
+.header h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin: 0 0 15px 0;
+    letter-spacing: 2px;
+    color: var(--primary-color);
+}
+
+.header p {
+    font-size: 1.1rem;
+    color: var(--subtext-color);
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.card {
+    background: var(--card-bg);
+    border-radius: 24px;
+    padding: 50px 40px;
+    text-decoration: none;
+    color: inherit;
+    box-shadow: var(--card-shadow);
+    transition: var(--transition);
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--card-hover-shadow);
+}
+
+.icon-wrapper {
+    margin-bottom: 30px;
+    color: var(--primary-color);
+}
+
+.icon-wrapper svg {
+    width: 60px;
+    height: 60px;
+}
+
+.card h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 0 0 15px 0;
+    color: var(--primary-color);
+}
+
+.card p {
+    font-size: 1rem;
+    color: var(--subtext-color);
+    line-height: 1.6;
+    margin: 0;
+}
+
+@media (max-width: 600px) {
+    .header h1 {
+        font-size: 2.5rem;
+    }
+    .cards-container {
+        grid-template-columns: 1fr;
+    }
+}
