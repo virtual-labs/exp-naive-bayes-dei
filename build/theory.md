@@ -108,16 +108,28 @@ probability.
 The classification rule is: 
 
 <div align="center" style="margin: 20px 0;">
-    <span style="font-family: 'Times New Roman', 'Georgia', serif; font-size: 1.2em;">
-        <i>C</i><sup>*</sup> = argmax [ <i>P</i>(<i>C</i>) &times; &prod;<sub><i>i</i>=1</sub><sup><i>n</i></sup> <i>P</i>(<i>x<sub>i</sub></i> | <i>C</i>) ]
+    <span style="font-family: 'Times New Roman', 'Georgia', serif; font-size: 1.25em;">
+        <i>C</i><sup>*</sup> = argmax [ <i>P</i>(<i>C</i>) &times; 
+        <div style="display: inline-block; vertical-align: middle; text-align: center; line-height: 1.1; margin: 0 5px;">
+            <div style="font-size: 0.75em;"><i>n</i></div>
+            <div style="font-size: 1.7em; margin: 3px 0;">&prod;</div>
+            <div style="font-size: 0.75em;"><i>i</i>=1</div>
+        </div>
+        <i>P</i>(<i>x<sub>i</sub></i> | <i>C</i>) ]
     </span>
 </div>
 
 To avoid numerical underflow when dealing with very small probability values, logarithms are applied: 
 
 <div align="center" style="margin: 20px 0;">
-    <span style="font-family: 'Times New Roman', 'Georgia', serif; font-size: 1.2em;">
-        <i>C</i><sup>*</sup> = argmax [ log <i>P</i>(<i>C</i>) + &Sigma;<sub><i>i</i>=1</sub><sup><i>n</i></sup> log <i>P</i>(<i>x<sub>i</sub></i> | <i>C</i>) ]
+    <span style="font-family: 'Times New Roman', 'Georgia', serif; font-size: 1.25em;">
+        <i>C</i><sup>*</sup> = argmax [ log <i>P</i>(<i>C</i>) + 
+        <div style="display: inline-block; vertical-align: middle; text-align: center; line-height: 1.1; margin: 0 5px;">
+            <div style="font-size: 0.75em;"><i>n</i></div>
+            <div style="font-size: 1.7em; margin: 3px 0;">&sum;</div>
+            <div style="font-size: 0.75em;"><i>i</i>=1</div>
+        </div>
+        log <i>P</i>(<i>x<sub>i</sub></i> | <i>C</i>) ]
     </span>
 </div>
 
@@ -181,17 +193,19 @@ within each class. The mean (μ) and variance (σ²) are estimated from training
 and class. The probability density function computes the likelihood: 
 
 <div align="center" style="margin: 20px 0;">
-    <span style="font-family: 'Times New Roman', 'Georgia', serif; font-size: 1.2em;">
+    <span style="font-family: 'Times New Roman', 'Georgia', serif; font-size: 1.25em;">
         <i>P</i>(<i>x<sub>i</sub></i> | <i>C</i>) = 
-        <div style="display: inline-block; vertical-align: middle; text-align: center; margin: 0 3px;">
-            <div style="border-bottom: 1.5px solid black; padding: 2px 8px;">1</div>
-            <div style="padding: 2px 8px;">&radic;<span style="text-decoration: overline;">2&pi;<i>&sigma;</i><sup>2</sup></span></div>
+        <div style="display: inline-block; vertical-align: middle; text-align: center; margin: 0 5px;">
+            <div style="border-bottom: 1.2px solid black; padding: 0 5px;">1</div>
+            <div style="padding-top: 2px;">
+                <span style="font-size: 1.2em; vertical-align: middle;">&radic;</span><span style="border-top: 1.2px solid black; padding-top: 1px; margin-left: -2px; display: inline-block; vertical-align: middle;">2&pi;<i>&sigma;</i><sup>2</sup></span>
+            </div>
         </div>
         &times; exp
         <span style="font-size: 1.3em; vertical-align: middle;">(</span>
-        <div style="display: inline-block; vertical-align: middle; text-align: center; margin: 0 2px;">
-            <div style="border-bottom: 1.5px solid black; padding: 2px 8px;">&minus;(<i>x<sub>i</sub></i> &minus; <i>&mu;</i>)<sup>2</sup></div>
-            <div style="padding: 2px 8px;">2<i>&sigma;</i><sup>2</sup></div>
+        <div style="display: inline-block; vertical-align: middle; text-align: center; margin: 0 5px;">
+            <div style="border-bottom: 1.2px solid black; padding: 0 5px;">&minus;(<i>x<sub>i</sub></i> &minus; <i>&mu;</i>)<sup>2</sup></div>
+            <div style="padding-top: 2px;">2<i>&sigma;</i><sup>2</sup></div>
         </div>
         <span style="font-size: 1.3em; vertical-align: middle;">)</span>
     </span>
@@ -291,17 +305,19 @@ accurate classification of emails into spam or legitimate messages.
 -    **For continuous features (Gaussian NB):** 
 Calculate mean (μ) and variance (σ²) of feature j for each class:
 <div style="margin: 10px 0; padding-left: 30px;">
-    <span style="font-family: 'Times New Roman', 'Georgia', serif; font-size: 1.1em;">
+    <span style="font-family: 'Times New Roman', 'Georgia', serif; font-size: 1.15em;">
         <i>P</i>(<i>x<sub>i</sub></i> | Class = <i>c</i>) = 
-        <div style="display: inline-block; vertical-align: middle; text-align: center; margin: 0 3px;">
-            <div style="border-bottom: 1.5px solid black; padding: 2px 8px;">1</div>
-            <div style="padding: 2px 8px;">&radic;<span style="text-decoration: overline;">2&pi;<i>&sigma;</i><sup>2</sup></span></div>
+        <div style="display: inline-block; vertical-align: middle; text-align: center; margin: 0 5px;">
+            <div style="border-bottom: 1.2px solid black; padding: 0 5px;">1</div>
+            <div style="padding-top: 2px;">
+                <span style="font-size: 1.2em; vertical-align: middle;">&radic;</span><span style="border-top: 1.2px solid black; padding-top: 1px; margin-left: -2px; display: inline-block; vertical-align: middle;">2&pi;<i>&sigma;</i><sup>2</sup></span>
+            </div>
         </div>
         &times; exp
         <span style="font-size: 1.3em; vertical-align: middle;">(</span>
-        <div style="display: inline-block; vertical-align: middle; text-align: center; margin: 0 2px;">
-            <div style="border-bottom: 1.5px solid black; padding: 2px 8px;">&minus;(<i>x<sub>i</sub></i> &minus; <i>&mu;</i>)<sup>2</sup></div>
-            <div style="padding: 2px 8px;">2<i>&sigma;</i><sup>2</sup></div>
+        <div style="display: inline-block; vertical-align: middle; text-align: center; margin: 0 5px;">
+            <div style="border-bottom: 1.2px solid black; padding: 0 5px;">&minus;(<i>x<sub>i</sub></i> &minus; <i>&mu;</i>)<sup>2</sup></div>
+            <div style="padding-top: 2px;">2<i>&sigma;</i><sup>2</sup></div>
         </div>
         <span style="font-size: 1.3em; vertical-align: middle;">)</span>
     </span>
@@ -321,15 +337,27 @@ Calculate mean (μ) and variance (σ²) of feature j for each class:
 **Step 5:** For Prediction: 
 - **For each class c, calculate:** 
 <div style="margin: 10px 0; padding-left: 30px;">
-    <span style="font-family: 'Times New Roman', 'Georgia', serif; font-size: 1.1em;">
-        Score(<i>c</i>) = <i>P</i>(Class = <i>c</i>) &times; &prod;<sub><i>i</i>=1</sub><sup><i>n</i></sup> <i>P</i>(<i>x<sub>i</sub></i> | Class = <i>c</i>)
+    <span style="font-family: 'Times New Roman', 'Georgia', serif; font-size: 1.15em;">
+        Score(<i>c</i>) = <i>P</i>(Class = <i>c</i>) &times; 
+        <div style="display: inline-block; vertical-align: middle; text-align: center; line-height: 1.1; margin: 0 5px;">
+            <div style="font-size: 0.75em;"><i>n</i></div>
+            <div style="font-size: 1.75em; margin: 3px 0;">&prod;</div>
+            <div style="font-size: 0.75em;"><i>i</i>=1</div>
+        </div>
+        <i>P</i>(<i>x<sub>i</sub></i> | Class = <i>c</i>)
     </span>
 </div>
 
 - **Use log to avoid underflow:** 
 <div style="margin: 10px 0; padding-left: 30px;">
-    <span style="font-family: 'Times New Roman', 'Georgia', serif; font-size: 1.1em;">
-        Log_Score(<i>c</i>) = log(<i>P</i>(Class = <i>c</i>)) + &Sigma;<sub><i>i</i>=1</sub><sup><i>n</i></sup> log(<i>P</i>(<i>x<sub>i</sub></i> | Class = <i>c</i>))
+    <span style="font-family: 'Times New Roman', 'Georgia', serif; font-size: 1.15em;">
+        Log_Score(<i>c</i>) = log(<i>P</i>(Class = <i>c</i>)) + 
+        <div style="display: inline-block; vertical-align: middle; text-align: center; line-height: 1.1; margin: 0 5px;">
+            <div style="font-size: 0.75em;"><i>n</i></div>
+            <div style="font-size: 1.75em; margin: 3px 0;">&sum;</div>
+            <div style="font-size: 0.75em;"><i>i</i>=1</div>
+        </div>
+        log(<i>P</i>(<i>x<sub>i</sub></i> | Class = <i>c</i>))
     </span>
 </div>
 
