@@ -1,0 +1,175 @@
+{
+  "version": 2.0,
+  "questions": [
+    {
+      "question": "Naive Bayes is classified as which type of machine learning algorithm?",
+      "answers": {
+        "a": "Unsupervised learning algorithm",
+        "b": "Reinforcement learning algorithm",
+        "c": "Probabilistic learning algorithm",
+        "d": "Semi-supervised learning algorithm"
+      },
+      "explanations": {
+        "a": "Naive Bayes requires labelled data for training.",
+        "b": "Naive Bayes does not learn through rewards or actions.",
+        "c": "Naive Bayes uses probability theory to make predictions.",
+        "d": "Naive Bayes does not combine labelled and unlabelled data."
+      },
+      "correctAnswer": "c",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "The fundamental principle behind the Naive Bayes classifier is based on:",
+      "answers": {
+        "a": "Maximum margin optimization",
+        "b": "Bayes’ theorem",
+        "c": "Gradient descent",
+        "d": "Euclidean distance"
+      },
+      "explanations": {
+        "a": "Maximum margin is used in Support Vector Machines.",
+        "b": "Naive Bayes directly applies Bayes’ theorem for classification.",
+        "c": "Gradient descent is an optimization technique, not a principle.",
+        "d": "Euclidean distance is mainly used in KNN algorithms."
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "Why does Naive Bayes often perform well on high-dimensional text data despite its strong independence assumption?",
+      "answers": {
+        "a": "Because text features are always independent",
+        "b": "Because relative probability comparisons matter more than exact probability values",
+        "c": "Because it automatically removes correlated features",
+        "d": "Because it internally uses deep learning layers"
+      },
+      "explanations": {
+        "a": "Words in text data are often correlated.",
+        "b": "Classification depends on comparing posterior probabilities rather than exact probability estimates.",
+        "c": "Naive Bayes does not perform feature selection.",
+        "d": "Naive Bayes is a simple probabilistic model, not a deep learning model."
+      },
+      "correctAnswer": "b",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "What are the assumptions of Naïve Bayesian classifier?",
+      "answers": {
+        "a": "It assumes that features of a data are completely dependent on each other",
+        "b": "It assumes that each input variable is dependent and the model is not generative",
+        "c": "It assumes that each input attributes are independent of each other and the model is generative",
+        "d": "It assumes that the data dimensions are dependent and the model is generative"
+      },
+      "explanations": {
+        "a": "Naive Bayes assumes independence, not dependence.",
+        "b": "Naive Bayes is a generative model.",
+        "c": "Naive Bayes assumes feature independence and models class distributions.",
+        "d": "Dependency among features violates the Naive Bayes assumption."
+      },
+      "correctAnswer": "c",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "In Naive Bayes text classification, why is Laplace smoothing applied during probability estimation?",
+      "answers": {
+        "a": "To reduce training time",
+        "b": "To handle zero probability for unseen words",
+        "c": "To normalize feature values",
+        "d": "To remove noisy features"
+      },
+      "explanations": {
+        "a": "Smoothing does not affect the computational speed of training.",
+        "b": "Laplace smoothing prevents zero probability when a word does not appear in the training data for a class.",
+        "c": "Feature normalization is a separate preprocessing step.",
+        "d": "Smoothing does not remove or filter features."
+      },
+      "correctAnswer": "b",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "Which of the following statement is not true about Naïve Bayes classifier algorithm?",
+      "answers": {
+        "a": "It cannot be used for Binary as well as multi-class classifications",
+        "b": "It is the most popular choice for text classification problems",
+        "c": "It performs well in Multi-class prediction as compared to other algorithms",
+        "d": "It is one of the fast and easy machine learning algorithms to predict a class of test datasets"
+      },
+      "explanations": {
+        "a": "Naive Bayes supports both binary and multi-class classification.",
+        "b": "Naive Bayes is widely used in text classification.",
+        "c": "Naive Bayes performs efficiently for multi-class problems.",
+        "d": "Naive Bayes is computationally efficient."
+      },
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "From a probabilistic modeling perspective, why is Naive Bayes considered a generative model?",
+      "answers": {
+        "a": "It directly models the decision boundary between classes",
+        "b": "It generates new synthetic training samples",
+        "c": "It models the joint probability distribution of features and class labels",
+        "d": "It maximizes classification accuracy during training"
+      },
+      "explanations": {
+        "a": "Decision boundaries are modelled by discriminative models.",
+        "b": "Naive Bayes does not generate new data samples.",
+        "c": "Naive Bayes learns class-conditional and prior probabilities.",
+        "d": "Maximizing accuracy is not the objective of generative modelling."
+      },
+      "correctAnswer": "c",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "Which one of the following applications is not an example of Naïve Bayes algorithm?",
+      "answers": {
+        "a": "Spam filtering",
+        "b": "Text classification",
+        "c": "Stock market forecasting",
+        "d": "Sentiment analysis"
+      },
+      "explanations": {
+        "a": "Naive Bayes is widely used in spam filtering.",
+        "b": "Naive Bayes is effective for text classification.",
+        "c": "Stock market forecasting requires time-series modelling.",
+        "d": "Naive Bayes is commonly used for sentiment analysis."
+      },
+      "correctAnswer": "c",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "Which situation most strongly violates the core assumption of the Naive Bayes classifier?",
+      "answers": {
+        "a": "Features having different numeric scales",
+        "b": "Highly correlated features influencing the same class",
+        "c": "Presence of class imbalance in the dataset",
+        "d": "Large number of training samples"
+      },
+      "explanations": {
+        "a": "Naive Bayes is not affected by feature scaling.",
+        "b": "Naive Bayes assumes conditional independence among features.",
+        "c": "Class imbalance affects performance but not the independence assumption.",
+        "d": "Having more training data generally improves model performance."
+      },
+      "correctAnswer": "b",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "During text classification, what does the word “feature” usually represent?",
+      "answers": {
+        "a": "Sentence structure",
+        "b": "Word or term occurrence",
+        "c": "Grammar rules",
+        "d": "Punctuation marks"
+      },
+      "explanations": {
+        "a": "Features are not based on sentence structure.",
+        "b": "Words or term frequencies act as features.",
+        "c": "Grammar rules are not directly used as features.",
+        "d": "Punctuation is usually removed during preprocessing."
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    }
+  ]
+}

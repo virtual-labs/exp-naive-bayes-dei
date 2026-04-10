@@ -1,0 +1,16 @@
+
+/home/runner/work/exp-naive-bayes-dei/exp-naive-bayes-dei/experiment/simulation/js/animation/app.js
+   89:17  warning  '_' is defined but never used                 no-unused-vars
+  524:9   warning  'msgHam' is assigned a value but never used   no-unused-vars
+  525:9   warning  'msgSpam' is assigned a value but never used  no-unused-vars
+  766:41  warning  'rank' is defined but never used              no-unused-vars
+
+/home/runner/work/exp-naive-bayes-dei/exp-naive-bayes-dei/experiment/simulation/js/main.js
+  225:37  warning  Unnecessary escape character: \S  no-useless-escape
+  225:44  warning  Unnecessary escape character: \.  no-useless-escape
+  225:46  warning  Unnecessary escape character: \S  no-useless-escape
+  225:82  warning  Unnecessary escape character: \s  no-useless-escape
+  226:18  warning  Unnecessary escape character: \s  no-useless-escape
+
+✖ 9 problems (0 errors, 9 warnings)
+
